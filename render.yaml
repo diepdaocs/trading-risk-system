@@ -1,0 +1,24 @@
+# render.yaml
+services:
+  - type: web
+    name: trading-risk-backend
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: PORT
+        value: 8080
+
+  - type: web
+    name: trading-risk-frontend
+    env: docker
+    dockerContext: frontend
+    dockerfilePath: frontend/Dockerfile
+    plan: free
+    healthCheckPath: /health
+    # We don't expose 80 to render, render uses PORT env var to expose its internal port.
+    # Nginx default is 80, so we just map it.
+    envVars:
+      - key: PORT
+        value: 80
