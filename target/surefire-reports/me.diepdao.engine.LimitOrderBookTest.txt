@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: me.diepdao.engine.LimitOrderBookTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 s -- in me.diepdao.engine.LimitOrderBookTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.132 s -- in me.diepdao.engine.LimitOrderBookTest

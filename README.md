@@ -59,3 +59,19 @@ The system heavily utilizes interfaces (`TradeRepository`, `RiskRepository`, `Ev
 1. Implement `KafkaEventBus` to replace `InMemoryEventBus`.
 2. Implement `ClickHouseTradeRepository` to replace `InMemoryTradeRepository`.
 3. Update `TradingSystemModule` (Guice) to bind the new implementations.
+
+## Docker Deployment
+
+To run the entire system using Docker:
+
+```bash
+docker-compose up --build
+```
+
+The frontend will be available at `http://localhost:80` and the backend API at `http://localhost:8080/api/`.
+
+## CI/CD and Cloud Deployment
+
+This repository includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds the Java and React applications and publishes Docker images to GitHub Container Registry (GHCR) upon merging to `main`.
+
+A `render.yaml` file is also included for easy Infrastructure-as-Code deployment to **Render** (a popular PaaS).
