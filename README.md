@@ -2,7 +2,7 @@
 
 A minimal simulation trading and risk management system designed to demonstrate core concepts like order matching, real-time risk calculations, and event-driven architecture.
 
-This v1 implements an in-memory approach to the architecture, using interfaces designed to be extensible to distributed systems (Kafka, ClickHouse, Hazelcast) in future iterations.
+This v1 implements an in-memory approach to the architecture, using interfaces designed to be extensible to distributed systems (Message Queue, Columnar Database, Distributed Cache) in future iterations.
 
 ## Architecture
 
@@ -56,8 +56,8 @@ Open your browser to the URL provided by Vite (typically `http://localhost:5173`
 ## Extensibility
 
 The system heavily utilizes interfaces (`TradeRepository`, `RiskRepository`, `EventPublisher`, `EventSubscriber`). To upgrade the system to a production-ready distributed setup:
-1. Implement `KafkaEventBus` to replace `InMemoryEventBus`.
-2. Implement `ClickHouseTradeRepository` to replace `InMemoryTradeRepository`.
+1. Implement a `MessageQueueEventBus` to replace `InMemoryEventBus`.
+2. Implement a `ColumnarDbTradeRepository` to replace `InMemoryTradeRepository`.
 3. Update `TradingSystemModule` (Guice) to bind the new implementations.
 
 ## Docker Deployment
